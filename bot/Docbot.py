@@ -23,7 +23,14 @@ class DocBot(commands.Bot):
 
     def parse_args() -> Namespace:
         parser = ArgumentParser()
-        parser.add_argument("-c", "--config", help="Config file", required=True, dest="config")
+
+        parser.add_argument("s", type=int,
+            help="display a square of a given number")
+        parser.add_argument("terre", type=int,
+            help="display a square of a given number")
+        parser.add_argument("-v", "--verbose", action="store_true",
+            help="increase output verbosity")
+            
         return parser.parse_args()
 
 doc_bot=DocBot()
